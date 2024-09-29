@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CargoTransportation.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "DriverVehicles";
+}
+
+<h1>Закрепленные машины</h1>
+
+<p>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistrationNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarryingCapacity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrationNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarryingCapacity)
+            </td>
+            <td>
+                    <a asp-controller="DriverVehicle" asp-action="Delete" asp-route-driverId="@TempData["currentDriverOrVehicleId"]" asp-route-vehicleId="@item.Id">Открепить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

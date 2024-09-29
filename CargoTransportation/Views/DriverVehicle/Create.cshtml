@@ -1,0 +1,32 @@
+﻿@model CargoTransportation.Models.DriverVehicle
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>DriverVehicle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DriverId" class="control-label"></label>
+                @Html.DropDownList("DriverId", ViewBag.Drivers as SelectList, "Выберите водителя", new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label asp-for="VehicleId" class="control-label"></label>
+                @Html.DropDownList("VehicleId", ViewBag.Vehicles as SelectList, "Выберите машину", new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <input type="submit" class="button" value="Create" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
