@@ -11,8 +11,7 @@ id int identity primary key,
 [Name] nvarchar(max),
 Phone nvarchar(12),
 Email nvarchar(max),
-[Address] nvarchar(max),
-BirthDate datetime);
+[Address] nvarchar(max));
 
 create table Vehicles(
 id int identity primary key,
@@ -32,11 +31,11 @@ begin
 use CargoTransportation;
 
 insert into dbo.Drivers values
-('Доминик Торето','48888888888','toreto@gmail.com','Kansas Wichita 10315 West 13th St N','1999-01-01 01:01:01'),
-('Rob Zombie','88888888888','rob@gmail.com','Horror Mansion','1999-01-01 01:01:01'),
-('Unga Bunga','78888888888','bunga@gmail.com','Moscow Kremlin','1999-01-01 01:01:01'),
-('Гарри Потный','68888888888','harry@gmail.com','Hogwartz Legacy ps5','1999-01-01 01:01:01'),
-('ChatGPT','58888888888','gpt@gmail.com','Unable to load site','1999-01-01 01:01:01');
+('Доминик Торето','48888888888','toreto@gmail.com','Kansas Wichita 10315 West 13th St N'),
+('Rob Zombie','88888888888','rob@gmail.com','Horror Mansion'),
+('Unga Bunga','78888888888','bunga@gmail.com','Moscow Kremlin'),
+('Гарри Потный','68888888888','harry@gmail.com','Hogwartz Legacy ps5'),
+('ChatGPT','58888888888','gpt@gmail.com','Unable to load site');
 
 insert into dbo.Vehicles values
 ('Agrale','Agrale Marrua','fg327868',100),
