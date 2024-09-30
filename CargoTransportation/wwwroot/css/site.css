@@ -79,6 +79,10 @@ body {
     align-items: center;
 }
 
+.delete-form {
+    margin-top: 25vh;
+}
+
 .center-form h1{
     text-align: center;
 }
@@ -177,7 +181,7 @@ body {
     }
 }
 
-/**/
+/* navbar */
 
 @media (max-width: 960px) {
     .container {
