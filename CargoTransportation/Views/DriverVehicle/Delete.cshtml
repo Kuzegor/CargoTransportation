@@ -1,10 +1,10 @@
 ﻿@model DriverVehicle
 
-<form enctype="multipart/form-data" class="form" method="post" asp-action="Delete">
-    <h1 class="blue">Вы уыерены что хотите удалить эту запись?</h1>
+<form class="center-form" asp-action="Delete">
+    <h1 class="driver-vehicle-header">Открепить машину от водителя?</h1>
     <input type="hidden" asp-for="DriverId" />
     <input type="hidden" asp-for="VehicleId" />
-    <div class="buttons-row-center">
-        <button type="submit" value="Delete" class="red delete-button">Yes</button>
+    <div class="delete-button-block">
+        <button type="submit" value="Delete" class="red button">Открепить</button>
     </div>
 </form>

@@ -12,26 +12,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Make)
+                <h4>Модель</h4>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Model)
+                <h4>Номер</h4>
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RegistrationNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CarryingCapacity)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Make)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Model)
             </td>
@@ -39,10 +29,8 @@
                 @Html.DisplayFor(modelItem => item.RegistrationNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CarryingCapacity)
-            </td>
-            <td>
-                    <a asp-controller="DriverVehicle" asp-action="Delete" asp-route-driverId="@TempData["currentDriverOrVehicleId"]" asp-route-vehicleId="@item.Id">Открепить</a>
+                <a asp-controller="Vehicle" asp-action="Details" asp-route-id="@item.Id" >Просмотреть</a> |
+                <a asp-controller="DriverVehicle" asp-action="Delete" asp-route-driverId="@TempData["currentDriverOrVehicleId"]" asp-route-vehicleId="@item.Id" class="red-link">Открепить</a>
             </td>
         </tr>
 }

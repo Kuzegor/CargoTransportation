@@ -6,27 +6,15 @@
 
 <h1>Закрепленные водители</h1>
 
-<p>
-</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                <h4>Имя</h4>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Phone)
+                <h4>Телефон</h4>
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BirthDate)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -39,16 +27,8 @@
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BirthDate)
-            </td>
-            <td>
-                <a asp-controller="DriverVehicle" asp-action="Delete" asp-route-driverId="@item.Id" asp-route-vehicleId="@TempData["currentDriverOrVehicleId"]">Открепить</a>
+                    <a asp-controller="Driver" asp-action="Details" asp-route-id="@item.Id">Просмотреть</a> |
+                    <a asp-controller="DriverVehicle" asp-action="Delete" asp-route-driverId="@item.Id" asp-route-vehicleId="@TempData["currentDriverOrVehicleId"]" class="red-link">Открепить</a>
             </td>
         </tr>
 }

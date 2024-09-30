@@ -4,43 +4,36 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Новая машина</h1>
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Make" class="control-label"></label>
-                <input asp-for="Make" class="form-control" required />
-                <span asp-validation-for="Make" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Model" class="control-label"></label>
-                <input asp-for="Model" class="form-control" required />
-                <span asp-validation-for="Model" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RegistrationNumber" class="control-label"></label>
-                <input asp-for="RegistrationNumber" class="form-control" required />
-                <span asp-validation-for="RegistrationNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CarryingCapacity" class="control-label"></label>
-                <input asp-for="CarryingCapacity" class="form-control" required />
-                <span asp-validation-for="CarryingCapacity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+
+<form asp-action="Create" class="center-form">
+    <h1>Новая машина</h1>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="input-block bigger-font-size">
+        <label asp-for="Make" class="control-label">Марка</label>
+        <input asp-for="Make" class="form-control" required />
+        <span asp-validation-for="Make" class="text-danger"></span>
     </div>
-</div>
+    <div class="input-block bigger-font-size">
+        <label asp-for="Model" class="control-label">Модель</label>
+        <input asp-for="Model" class="form-control" required />
+        <span asp-validation-for="Model" class="text-danger"></span>
+    </div>
+    <div class="input-block bigger-font-size">
+        <label asp-for="RegistrationNumber" class="control-label">Номер</label>
+        <input asp-for="RegistrationNumber" class="form-control" required />
+        <span asp-validation-for="RegistrationNumber" class="text-danger"></span>
+    </div>
+    <div class="input-block bigger-font-size">
+        <label asp-for="CarryingCapacity" class="control-label">Грузоподъемность</label>
+        <input asp-for="CarryingCapacity" class="form-control" required />
+        <span asp-validation-for="CarryingCapacity" class="text-danger"></span>
+    </div>
+    <div class="button-block">
+        <input type="submit" value="Добавить" class="button blue" />
+    </div>
+</form>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

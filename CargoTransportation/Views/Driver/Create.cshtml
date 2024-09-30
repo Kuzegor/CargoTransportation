@@ -4,48 +4,38 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Новый водитель</h1>
-
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" required />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" maxlength="12" minlength="11" required />
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" required />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" required />
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BirthDate" class="control-label"></label>
-                @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control", @min = DateTime.Now.AddYears(-100)} })
-                <span asp-validation-for="BirthDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<form asp-action="Create" class="center-form">
+    <h1>Новый водитель</h1>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="input-block bigger-font-size">
+        <label asp-for="Name" class="control-label">Имя</label>
+        <input asp-for="Name" class="form-control" required />
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div class="input-block bigger-font-size">
+        <label asp-for="Phone" class="control-label">Телефон</label>
+        <input asp-for="Phone" class="form-control" maxlength="12" minlength="11" required />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+    <div class="input-block bigger-font-size">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" required />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="input-block bigger-font-size">
+        <label asp-for="Address" class="control-label">Адрес</label>
+        <input asp-for="Address" class="form-control" required />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div class="input-block bigger-font-size">
+        <label asp-for="BirthDate" class="control-label">Дата рождения</label>
+        @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control", @min = DateTime.Now.AddYears(-100) } })
+        <span asp-validation-for="BirthDate" class="text-danger"></span>
+    </div>
+    <div class="button-block">
+        <input type="submit" value="Добавить" class="button blue" />
+    </div>
+</form>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

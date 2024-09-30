@@ -5,25 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Грузоперевозки</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <h2>Грузоперевозки </h2>               
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Vehicle" asp-action="Index">Машины</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Driver" asp-action="Index">Водители</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="DriverVehicle" asp-action="Create">Закрепить</a>
-                        </li>
-                    </ul>
+                <h1 id="main-header">Грузоперевозки </h1>               
+                <div class="navbar-links">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Vehicle" asp-action="Index">Машины</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Driver" asp-action="Index">Водители</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="DriverVehicle" asp-action="Create">Закрепить</a>
                 </div>
             </div>
         </nav>
@@ -36,7 +31,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - CargoTransportation - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - CargoTransportation
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

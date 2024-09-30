@@ -7,27 +7,17 @@
 <h1>Водители</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" >Добавить водителя</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                <h4>Имя</h4>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Phone)
+                <h4>Телефон</h4>
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BirthDate)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -40,19 +30,10 @@
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BirthDate)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
-                <a asp-action="DriverVehicles" asp-route-id="@item.Id">Закрепленные машины</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" >Редактировать</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" >Просмотреть</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="red-link">Удалить</a> |
+                <a asp-action="DriverVehicles" asp-route-id="@item.Id" >Закрепленные машины</a>
             </td>
         </tr>
 }
