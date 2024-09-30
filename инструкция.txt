@@ -1,0 +1,2 @@
+1. Выполнить скрипт CargoTransportation.sql в MS SQL
+2. Заменить строку подключения в appsettings.json на свою
