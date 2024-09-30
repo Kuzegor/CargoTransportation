@@ -14,8 +14,9 @@ namespace CargoTransportation.Controllers
         }
          
         // VEHICLE DRIVERS
-        public async Task<IActionResult> VehicleDrivers(int id)
+        public async Task<IActionResult> VehicleDrivers(int id, string modelAndNumber)
         {
+            ViewBag.ModelAndNumber = modelAndNumber;
             TempData["currentDriverOrVehicleId"] = id;
             var vehicles = await _vehicleRepository.GetDriversByVehicleIdAsync(id);
             if (vehicles != null)

@@ -33,7 +33,7 @@
                 <a asp-action="Edit" asp-route-id="@item.Id" >Редактировать</a> |
                 <a asp-action="Details" asp-route-id="@item.Id" >Просмотреть</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id" class="red-link">Удалить</a> |
-                <a asp-action="DriverVehicles" asp-route-id="@item.Id" >Закрепленные машины</a>
+                <a asp-action="DriverVehicles" asp-route-id="@item.Id" asp-route-name="@item.Name">Закрепленные машины</a>
             </td>
         </tr>
 }

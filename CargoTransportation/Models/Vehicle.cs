@@ -18,6 +18,12 @@ namespace CargoTransportation.Models
         [Required(ErrorMessage = "Необходимо заполнить это поле")]
         public double CarryingCapacity { get; set; }
         public ICollection<DriverVehicle> VehicleDrivers { get; set; }
+        public string ModelAndNumber {
+            get
+            {
+                return Model + " (" + RegistrationNumber + ")";
+            } 
+        }
 
     }
 }

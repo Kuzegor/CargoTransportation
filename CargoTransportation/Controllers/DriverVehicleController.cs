@@ -24,7 +24,7 @@ namespace CargoTransportation.Controllers
             var drivers = await _driverRepository.GetAllDriversAsync();
             var vehicles = await _vehicleRepository.GetAllVehiclesAsync();
             ViewBag.Drivers = new SelectList(drivers, "Id", "Name");
-            ViewBag.Vehicles = new SelectList(vehicles, "Id", "Model");
+            ViewBag.Vehicles = new SelectList(vehicles, "Id", "ModelAndNumber");
             return View();
         }
         [HttpPost]
